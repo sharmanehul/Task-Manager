@@ -1,0 +1,18 @@
+body{
+    width: 50%;
+    margin: 0 auto;
+}
+
+header > h1{
+    width: 50%;
+    margin: 10vmax auto;
+    justify-content: center;
+    text-align: center;
+    font-weight: 200px;
+    color: rgb(2, 24, 70);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    text-align: center;
+}
