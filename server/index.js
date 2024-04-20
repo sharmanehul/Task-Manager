@@ -1,5 +1,5 @@
 const express = require("express");
-
+const path = require("path")
 const bodyParser = require("body-parser");
 const router = require("./routes/router.js"); // Use 'router' with a lowercase 'r'
 
@@ -21,7 +21,15 @@ app.use((req,res,next)=>{
 
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use('/', router); 
+app.use('/api', router); 
+
+
+app.use(express.static(path.join(__dirname,'..','public')))
+
+app.get('/*',(req,res) => {
+    res.sendFile(path.join(__dirname,'..','public','index.html'))
+})
+
 
 const PORT = 8000;
 
